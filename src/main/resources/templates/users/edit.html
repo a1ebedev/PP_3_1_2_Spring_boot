@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Изменение данных</h1>
-    <form th:method="POST" th:action="@{/users/edit(id=${user.getId()})}" th:object="${user}">
+    <form th:method="POST" th:action="@{/edit(id=${user.getId()})}" th:object="${user}">
         <label for="name">Имя</label>
         <input th:field="*{name}" type="text" id="name"><br>
         <label for="email">E-mail</label>

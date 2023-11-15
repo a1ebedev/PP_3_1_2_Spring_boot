@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Добавление нового пользователя</h1>
-    <form th:method="POST" th:action="@{/users}" th:object="${user}">
+    <form th:method="POST" th:action="@{/}" th:object="${user}">
         <label for="name">Имя</label>
         <input th:field="*{name}" type="text" id="name"><br>
         <label for="email">E-mail</label>

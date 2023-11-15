@@ -1,9 +1,8 @@
 package ru.sashqa.PP_3_1_2.model;
 
-
-import jakarta.persistence.*;
-
+import javax.persistence.*;
 import java.util.Objects;
+
 
 @Entity
 @Table(name = "users")

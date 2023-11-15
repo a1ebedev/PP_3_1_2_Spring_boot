@@ -34,10 +34,10 @@
         <td th:text="${user.getAge()}"></td>
         <td>
             <div>
-                <a style="float: left" th:href="@{/users/edit(id=${user.getId()})}">Изменить</a>
+                <a style="float: left" th:href="@{/edit(id=${user.getId()})}">Изменить</a>
             </div>
 
-            <form style="float: right" th:method="POST" th:action="@{/users/remove(id=${user.getId()})}">
+            <form style="float: right" th:method="POST" th:action="@{/remove(id=${user.getId()})}">
                 <input type="submit" value="Удалить">
             </form>
         </td>
@@ -45,6 +45,6 @@
     </tr>
 </table>
 <br>
-<a href="users/new">Добавить</a>
+<a href="/new">Добавить</a>
 </body>
 </html>

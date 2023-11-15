@@ -9,7 +9,7 @@ import ru.sashqa.PP_3_1_2.service.UserService;
 
 
 @Controller
-@RequestMapping("/users")
+@RequestMapping("/")
 public class UserController {
     private final UserService userService;
 
@@ -32,7 +32,7 @@ public class UserController {
     @PostMapping
     public String create(@ModelAttribute("user") User user) {
         userService.addUser(user);
-        return "redirect:/users";
+        return "redirect:/";
     }
 
     @GetMapping(value = "/edit")
@@ -44,13 +44,13 @@ public class UserController {
     @PostMapping(value = "/edit")
     public String update(@RequestParam("id") int id, @ModelAttribute("user") User user) {
         userService.updateUser(id, user);
-        return "redirect:/users";
+        return "redirect:/";
     }
 
     @PostMapping("/remove")
     public String remove(@RequestParam("id") int id) {
         userService.deleteUser(id);
-        return "redirect:/users";
+        return "redirect:/";
     }
 
 }

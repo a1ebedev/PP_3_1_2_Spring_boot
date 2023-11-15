@@ -8,7 +8,9 @@ import ru.sashqa.PP_3_1_2.model.User;
 
 import java.util.List;
 
+
 @Service
+@Transactional
 public class UserServiceImp implements UserService {
 
     private final UserRepository userRepository;
@@ -30,20 +32,17 @@ public class UserServiceImp implements UserService {
         return userRepository.findById(id).orElse(null);
     }
 
-    @Transactional
     @Override
     public void addUser(User user) {
         userRepository.save(user);
     }
 
-    @Transactional
     @Override
     public void updateUser(int id, User updatedUser) {
         updatedUser.setId(id);
         userRepository.save(updatedUser);
     }
 
-    @Transactional
     @Override
     public void deleteUser(int id) {
         userRepository.deleteById(id);
